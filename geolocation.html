@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>获取本地的地理信息</title>
+  </head>
+  <body>
+    <script>
+      if (navigator.geolocation) {
+        //获取本地的地理信息
+        navigator.geolocation.getCurrentPosition(
+          function (position) {
+            document.write(
+              "经度：" +
+                position.coords.longitude +
+                "纬度：" +
+                position.coords.latitude
+            );
+          },
+          function (error) {
+            alert(error);
+          }
+        );
+      } else {
+        alert("您当前使用的浏览器不支持geolocation服务");
+      }
+    </script>
+  </body>
+</html>
